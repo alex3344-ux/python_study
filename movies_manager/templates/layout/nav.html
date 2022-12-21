@@ -1,0 +1,13 @@
+{% block top_nav %}
+    <div>
+        <h3>{{current_director.first_name}} {{current_director.last_name}}</h3>
+        <ul>
+            <li><a href="{% url 'index' %}"> Главная </a></li>
+            {% for director in directors %}
+                <li><a href="{% url 'by_director' director.pk %}">{{director.last_name}}</a></li>
+            {% endfor %}
+            <li><a href="{% url 'create_movie' %}"> Добавить фильм </a></li>
+        </ul>
+    </div>
+    <div>
+{% endblock top_nav %}
